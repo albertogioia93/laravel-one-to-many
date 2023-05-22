@@ -26,7 +26,8 @@ class StorePostRequest extends FormRequest
         return [
             'title' => 'required|unique:posts|string|max:150',
             'content' => 'nullable|string',
-            'image' => 'nullable|image|max:2048'
+            'image' => 'nullable|image|max:2048',
+            'type_id' => 'nullable|exists:types,id'
         ];
     }
 }
