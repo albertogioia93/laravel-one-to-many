@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Type;
 use App\Models\Post;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -17,11 +18,19 @@ class PostSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i = 0; $i < 10; $i++){
+
+        Post::truncate();
+
+        for($i = 0; $i < 10; $i++){
+
+
+            $type = Type::inRandomOrder()->first(); //1 record della tabella types -> 1 istanza
+
             $post = new Post();
             $post->title = $faker->sentence(3);
             $post->content = $faker->text(500);
             $post->slug = Str::slug($post->title, '-');
+            $post->type_id = $type->id;
             $post->save();
         }
     }
