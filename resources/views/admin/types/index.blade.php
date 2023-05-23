@@ -47,7 +47,7 @@
                     <li><a href="{{ route('admin.types.show', $type->slug) }}" class="btn btn-sm btn-primary">Show</a></li>
                     <li><a href="{{ route('admin.types.edit', $type) }}" class="btn btn-sm btn-warning">Edit</a></li>
                     <li>
-                      <form action="{{ route('admin.types.destroy', $post) }}" method="POST">
+                      <form action="{{ route('admin.types.destroy', $type) }}" method="POST">
                       @csrf
                       @method('DELETE')
                       <button class="btn btn-sm btn-danger">Delete</button>

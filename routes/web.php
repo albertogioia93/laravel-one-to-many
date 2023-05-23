@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\TypeController;
 use Illuminate\Support\Facades\Route;
 
 /*
